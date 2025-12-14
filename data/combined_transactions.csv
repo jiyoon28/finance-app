@@ -1,0 +1,288 @@
+date,time,bank,type,merchant,category,amount_gbp,original_currency,original_amount,is_income
+2024-09-27,21:36:46,Monzo,Card payment,Apple,Entertainment,0.0,GBP,0.0,False
+2024-10-01,00:32:40,Monzo,Faster payment,JIYOON MOON,Transfers,281.17,GBP,281.17,True
+2024-10-01,15:26:08,Monzo,Card payment,Asda,Groceries,-6.76,GBP,-6.76,False
+2024-10-02,07:26:38,Monzo,Card payment,Amazon,Shopping,0.0,GBP,0.0,False
+2024-10-02,07:27:03,Monzo,Card payment,Amazon,Shopping,-28.67,GBP,-28.67,False
+2024-10-02,07:32:01,Monzo,Card payment,Amazon,Shopping,28.67,GBP,28.67,True
+2024-10-02,13:15:11,Monzo,Card payment,Refreshment System,Groceries,-1.5,GBP,-1.5,False
+2024-10-03,13:22:45,Monzo,Card payment,Circuit Laundry,General,-5.0,GBP,-5.0,False
+2024-10-03,12:37:51,Monzo,Card payment,Circuit Laundry,General,-9.0,GBP,-9.0,False
+2024-10-04,14:37:34,Monzo,Card payment,Transport for London,Transport,-5.6,GBP,-5.6,False
+2024-10-04,16:08:08,Monzo,Card payment,Ippudo,General,-18.5,GBP,-18.5,False
+2024-10-04,16:31:52,Monzo,Card payment,Muji,Shopping,-2.5,GBP,-2.5,False
+2024-10-04,16:49:35,Monzo,Card payment,Primark,Shopping,-6.0,GBP,-6.0,False
+2024-10-04,17:09:56,Monzo,Card payment,Boots,Personal care,-14.16,GBP,-14.16,False
+2024-10-04,17:40:57,Monzo,Card payment,Oseyo,Eating out,-37.8,GBP,-37.8,False
+2024-10-04,17:45:55,Monzo,Card payment,Sainsbury’s,Groceries,-0.85,GBP,-0.85,False
+2024-10-05,20:54:25,Monzo,Card payment,giffgaff,Bills,-10.0,GBP,-10.0,False
+2024-10-05,15:22:34,Monzo,Card payment,IKEA,Shopping,-33.5,GBP,-33.5,False
+2024-10-05,05:21:41,Monzo,Card payment,Boots,Personal care,2.83,GBP,2.83,True
+2024-10-05,10:34:23,Monzo,Card payment,Sainsbury’s,Groceries,-18.37,GBP,-18.37,False
+2024-10-05,10:53:04,Monzo,Card payment,Asda,Groceries,-5.14,GBP,-5.14,False
+2024-10-06,10:44:10,Monzo,Card payment,Pavillion,Entertainment,-6.0,GBP,-6.0,False
+2024-10-06,15:37:35,Monzo,Card payment,Transport for London,Transport,-1.75,GBP,-1.75,False
+2024-10-07,13:57:15,Monzo,Card payment,Asda,Groceries,-10.84,GBP,-10.84,False
+2024-10-08,16:23:23,Monzo,Card payment,Asda,Groceries,-8.44,GBP,-8.44,False
+2024-10-10,12:33:25,Monzo,Card payment,Drapers Bar,Eating out,-13.5,GBP,-13.5,False
+2024-10-10,12:35:33,Monzo,Faster payment,Athina Kranta,Income,7.0,GBP,7.0,True
+2024-10-10,12:40:49,Monzo,Faster payment,Rasika Ketkar,General,-1.5,GBP,-1.5,False
+2024-10-10,15:45:38,Monzo,Card payment,Candlelight,Entertainment,-37.8,GBP,-37.8,False
+2024-10-12,02:10:05,Monzo,Card payment,Apple,Entertainment,-8.99,GBP,-8.99,False
+2024-10-12,12:13:39,Monzo,Card payment,Asda,Groceries,-9.49,GBP,-9.49,False
+2024-10-13,12:16:12,Monzo,Card payment,Transport for London,Transport,-3.5,GBP,-3.5,False
+2024-10-13,11:40:56,Monzo,Card payment,Pantechnicon,General,-6.75,GBP,-6.75,False
+2024-10-13,13:30:14,Monzo,Card payment,Anya Hindmarch,Shopping,-12.66,GBP,-12.66,False
+2024-10-13,02:34:20,Monzo,Faster payment,JIYOON MOON,Transfers,166.92,GBP,166.92,True
+2024-10-13,08:01:58,Monzo,Card payment,Circuit Laundry,General,-6.0,GBP,-6.0,False
+2024-10-14,01:58:42,Monzo,Card payment,Transport for London,Transport,-5.6,GBP,-5.6,False
+2024-10-16,04:21:36,Monzo,Card payment,Ooomay,Shopping,-42.7,GBP,-42.7,False
+2024-10-16,17:26:59,Monzo,Card payment,Asda,Groceries,-21.1,GBP,-21.1,False
+2024-10-18,17:17:17,Monzo,Card payment,Ryanair,Holidays,-49.51,GBP,-49.51,False
+2024-10-19,11:16:58,Monzo,Card payment,Sainsbury’s,Groceries,-0.85,GBP,-0.85,False
+2024-10-20,18:55:20,Monzo,Card payment,IKEA,Shopping,-30.0,GBP,-30.0,False
+2024-10-20,12:32:49,Monzo,Card payment,Transport for London,Transport,-5.6,GBP,-5.6,False
+2024-10-25,16:49:22,Monzo,Faster payment,JIYOON MOON,Transfers,52.93,GBP,52.93,True
+2024-10-25,16:52:02,Monzo,Faster payment,Aidan Ko,General,-7.0,GBP,-7.0,False
+2024-10-26,21:18:09,Monzo,Card payment,Battersea Park Fireworks,Entertainment,-15.41,GBP,-15.41,False
+2024-11-04,21:09:09,Monzo,Card payment,giffgaff,Bills,-10.0,GBP,-10.0,False
+2024-11-07,12:54:29,Monzo,Card payment,Makars Mash,Eating out,-16.5,GBP,-16.5,False
+2024-11-07,01:52:31,Monzo,Faster payment,JIYOON MOON,Transfers,163.13,GBP,163.13,True
+2024-11-07,09:32:08,Monzo,Card payment,Lothian Buses,General,-8.0,GBP,-8.0,False
+2024-11-07,11:52:04,Monzo,Card payment,The Enchanted Galaxy A,Shopping,-7.99,GBP,-7.99,False
+2024-11-07,17:16:14,Monzo,Card payment,Marchbrae,Shopping,-159.0,GBP,-159.0,False
+2024-11-08,15:47:08,Monzo,Faster payment,JIYOON MOON,Transfers,108.35,GBP,108.35,True
+2024-11-10,10:47:52,Monzo,Card payment,Circuit Laundry,General,-7.0,GBP,-7.0,False
+2024-11-10,12:50:18,Monzo,Card payment,Circuit Laundry,General,-5.0,GBP,-5.0,False
+2024-11-10,16:49:52,Monzo,Card payment,Asda,Groceries,-13.72,GBP,-13.72,False
+2024-11-11,12:18:11,Monzo,Card payment,Kahaila Ltd,Eating out,-3.3,GBP,-3.3,False
+2024-11-11,14:51:57,Monzo,Card payment,Sainsbury’s,Groceries,-27.15,GBP,-27.15,False
+2024-11-12,03:10:31,Monzo,Card payment,Apple,Entertainment,-8.99,GBP,-8.99,False
+2024-11-12,16:16:58,Monzo,Card payment,Asda,Groceries,-4.69,GBP,-4.69,False
+2024-11-14,20:53:14,Monzo,Card payment,See Tickets,Entertainment,-11.0,GBP,-11.0,False
+2024-11-18,16:52:23,Monzo,Card payment,Asda,Groceries,-17.7,GBP,-17.7,False
+2024-11-18,13:45:44,Monzo,Monzo-to-Monzo,Siofra Bracken,Transfers,-34.15,GBP,-34.15,False
+2024-11-18,13:44:35,Monzo,Monzo-to-Monzo,Siofra Bracken,Transfers,-23.5,GBP,-23.5,False
+2024-11-18,03:34:31,Monzo,Faster payment,NIUM Fintech Limited,Income,167.36,GBP,167.36,True
+2024-11-19,11:12:47,Monzo,Card payment,Sainsbury’s,Groceries,-3.65,GBP,-3.65,False
+2024-11-19,18:14:56,Monzo,Card payment,Transport for London,Transport,-6.2,GBP,-6.2,False
+2024-11-19,19:23:58,Monzo,Card payment,Cho Sim,Eating out,-19.21,GBP,-19.21,False
+2024-11-20,14:04:18,Monzo,Card payment,Fortitude Bakehouse,Eating out,-3.95,GBP,-3.95,False
+2024-11-20,17:32:58,Monzo,Card payment,Circuit Laundry,General,-6.0,GBP,-6.0,False
+2024-11-20,18:46:01,Monzo,Card payment,Circuit Laundry,General,-5.0,GBP,-5.0,False
+2024-11-21,21:18:54,Monzo,Card payment,Happy Lamb Hotpot Holb,Eating out,-31.92,GBP,-31.92,False
+2024-11-21,10:49:12,Monzo,Card payment,Transport for London,Transport,-6.2,GBP,-6.2,False
+2024-11-22,03:51:12,Monzo,Card payment,Transport for London,Transport,-5.6,GBP,-5.6,False
+2024-11-23,13:04:19,Monzo,Card payment,Asda,Groceries,-13.0,GBP,-13.0,False
+2024-11-24,09:39:46,Monzo,Card payment,Starbucks,Eating out,-3.85,GBP,-3.85,False
+2024-11-27,09:23:05,Monzo,Card payment,Costa Coffee,Eating out,-5.9,GBP,-5.9,False
+2024-12-01,01:36:32,Monzo,Faster payment,JIYOON MOON,Transfers,277.92,GBP,277.92,True
+2024-12-02,07:44:57,Monzo,Card payment,Costa Coffee,Eating out,-0.02,GBP,-0.02,False
+2024-12-02,11:09:50,Monzo,Card payment,Asda,Groceries,-9.43,GBP,-9.43,False
+2024-12-03,09:51:21,Monzo,Card payment,Sainsbury’s,Groceries,-3.7,GBP,-3.7,False
+2024-12-04,21:31:35,Monzo,Card payment,giffgaff,Bills,-10.0,GBP,-10.0,False
+2024-12-04,21:04:28,Monzo,Card payment,LW Theatres,Entertainment,-25.0,GBP,-25.0,False
+2024-12-04,11:07:45,Monzo,Card payment,Tesco,Groceries,-2.1,GBP,-2.1,False
+2024-12-04,18:13:00,Monzo,Card payment,Asda,Groceries,-15.74,GBP,-15.74,False
+2024-12-05,08:11:46,Monzo,Card payment,Circuit Laundry,General,-5.0,GBP,-5.0,False
+2024-12-05,12:22:49,Monzo,Card payment,Genesis Cinema,Entertainment,-5.0,GBP,-5.0,False
+2024-12-05,14:19:26,Monzo,Card payment,Asda,Groceries,-15.9,GBP,-15.9,False
+2024-12-05,18:07:17,Monzo,Card payment,Genesis Cinema,Entertainment,-9.45,GBP,-9.45,False
+2024-12-07,17:11:08,Monzo,Card payment,Asda,Groceries,-7.67,GBP,-7.67,False
+2024-12-07,12:24:56,Monzo,Card payment,Graysons@The British L,Eating out,-12.95,GBP,-12.95,False
+2024-12-07,09:11:26,Monzo,Card payment,Transport for London,Transport,-5.6,GBP,-5.6,False
+2024-12-07,09:45:14,Monzo,Card payment,Caffè Nero,Eating out,-4.15,GBP,-4.15,False
+2024-12-08,16:48:01,Monzo,Card payment,Asda,Groceries,-10.91,GBP,-10.91,False
+2024-12-10,15:23:32,Monzo,Card payment,Shop And Go Mile End,Groceries,-5.59,GBP,-5.59,False
+2024-12-11,13:10:13,Monzo,Card payment,Transport for London,Transport,-5.6,GBP,-5.6,False
+2024-12-11,13:59:07,Monzo,Card payment,Asda,Groceries,-19.25,GBP,-19.25,False
+2024-12-12,03:11:25,Monzo,Card payment,Apple,Entertainment,-8.99,GBP,-8.99,False
+2024-12-12,07:55:33,Monzo,Card payment,Circuit Laundry,General,-5.0,GBP,-5.0,False
+2024-12-12,09:16:39,Monzo,Card payment,Circuit Laundry,General,-6.0,GBP,-6.0,False
+2024-12-12,12:13:16,Monzo,Card payment,Santaland Ride,Eating out,-5.0,GBP,-5.0,False
+2024-12-12,13:19:08,Monzo,Card payment,3176 Winter Wonderland,Eating out,-11.95,GBP,-11.95,False
+2024-12-12,13:54:37,Monzo,Card payment,Bavarian Village,Entertainment,-3.6,GBP,-3.6,False
+2024-12-12,14:45:34,Monzo,Card payment,Bavarian Village,Entertainment,-3.95,GBP,-3.95,False
+2024-12-13,04:38:40,Monzo,Card payment,Transport for London,Transport,-6.2,GBP,-6.2,False
+2024-12-13,13:35:47,Monzo,Card payment,Tesco,Groceries,-0.7,GBP,-0.7,False
+2024-12-14,22:14:51,Monzo,Card payment,Asda,Groceries,-13.52,GBP,-13.52,False
+2024-12-14,18:03:44,Monzo,Card payment,Dragons Den,Shopping,-11.95,GBP,-11.95,False
+2024-12-15,09:07:02,Monzo,Card payment,Costa Coffee,Eating out,-3.75,GBP,-3.75,False
+2024-12-15,11:13:45,Monzo,Monzo-to-Monzo,Rasika Ketkar,General,7.22,GBP,7.22,True
+2024-12-15,19:00:16,Monzo,Card payment,Tesco,Groceries,-5.15,GBP,-5.15,False
+2024-12-16,08:56:44,Monzo,Card payment,Costa Coffee,Eating out,-3.75,GBP,-3.75,False
+2024-12-16,12:20:58,Monzo,Card payment,Asda,Groceries,-7.8,GBP,-7.8,False
+2024-12-20,09:46:47,Monzo,Card payment,Transport for London,Transport,-8.3,GBP,-8.3,False
+2024-12-20,11:40:20,Monzo,Card payment,Transport for London,Transport,-5.6,GBP,-5.6,False
+2024-12-20,01:27:51,Monzo,Faster payment,JIYOON MOON,Transfers,108.15,GBP,108.15,True
+2024-12-21,17:43:34,Monzo,Card payment,Oseyo,Eating out,-39.57,GBP,-39.57,False
+2024-12-21,18:14:29,Monzo,Card payment,Primark,Shopping,-6.0,GBP,-6.0,False
+2024-12-22,03:48:45,Monzo,Card payment,Transport for London,Transport,-8.3,GBP,-8.3,False
+2024-12-22,16:14:31,Monzo,Card payment,Alices Shop,Shopping,-8.0,GBP,-8.0,False
+2024-12-22,17:29:39,Monzo,Card payment,Oxford Campus Stores,Shopping,-11.99,GBP,-11.99,False
+2024-12-23,13:16:39,Monzo,Card payment,Transport for London,Transport,-5.6,GBP,-5.6,False
+2024-12-24,13:59:17,Monzo,Card payment,Transport for London,Transport,-7.35,GBP,-7.35,False
+2024-12-25,10:22:55,Monzo,Card payment,Circuit Laundry,General,-5.0,GBP,-5.0,False
+2025-01-04,21:09:14,Monzo,Card payment,giffgaff,Bills,-10.0,GBP,-10.0,False
+2025-01-12,03:09:52,Monzo,Card payment,Apple,Entertainment,-8.99,GBP,-8.99,False
+2025-01-22,17:33:53,Monzo,Faster payment,JIYOON MOON,Transfers,110.36,GBP,110.36,True
+2025-01-29,19:56:03,Monzo,Card payment,Tesco,Groceries,0.0,GBP,0.0,False
+2025-01-29,19:56:44,Monzo,Card payment,Tesco,Groceries,0.0,GBP,0.0,False
+2025-01-30,23:36:24,Monzo,Card payment,Amazon,Shopping,-35.65,GBP,-35.65,False
+2025-01-30,23:39:16,Monzo,Card payment,Amazon,Shopping,0.0,GBP,0.0,False
+2025-01-31,16:59:44,Monzo,Card payment,Asda,Groceries,-11.43,GBP,-11.43,False
+2025-02-01,11:41:40,Monzo,Card payment,Transport for London,Transport,-8.5,GBP,-8.5,False
+2025-02-01,15:24:16,Monzo,Card payment,Sune,Eating out,-27.82,GBP,-27.82,False
+2025-02-01,19:11:37,Monzo,Card payment,Sainsbury’s,Groceries,-9.35,GBP,-9.35,False
+2025-02-04,21:28:38,Monzo,Card payment,giffgaff,Bills,-10.0,GBP,-10.0,False
+2025-02-05,01:03:20,Monzo,Faster payment,JIYOON MOON,Transfers,52.69,GBP,52.69,True
+2025-02-05,09:22:29,Monzo,Faster payment,Queen Mary University Of London,Bills,-29.04,GBP,-29.04,False
+2025-02-07,16:31:39,Monzo,Card payment,Genesis Cinema,Entertainment,-5.0,GBP,-5.0,False
+2025-02-12,03:09:53,Monzo,Card payment,Apple,Entertainment,-8.99,GBP,-8.99,False
+2025-02-27,16:49:10,Monzo,Card payment,Wetherspoon,Eating out,-1.57,GBP,-1.57,False
+2025-03-01,00:22:00,Monzo,Faster payment,JIYOON MOON,Transfers,52.07,GBP,52.07,True
+2025-03-01,23:23:40,Monzo,Faster payment,Shloka GUND,Eating out,-8.9,GBP,-8.9,False
+2025-03-04,21:07:02,Monzo,Card payment,giffgaff,Bills,-10.0,GBP,-10.0,False
+2025-03-12,02:10:15,Monzo,Card payment,Apple,Entertainment,-8.99,GBP,-8.99,False
+2025-04-01,10:39:43,Monzo,Faster payment,JIYOON MOON,Transfers,102.65,GBP,102.65,True
+2025-04-01,10:40:03,Monzo,Card payment,Medipharma Ltd (optiba,Groceries,-39.99,GBP,-39.99,False
+2025-04-02,23:20:24,Monzo,Monzo-to-Monzo,Siofra Bracken,Entertainment,-25.8,GBP,-25.8,False
+2025-04-04,20:28:48,Monzo,Card payment,giffgaff,Bills,-10.0,GBP,-10.0,False
+2025-04-07,04:56:00,Monzo,Faster payment,JIYOON MOON,Transfers,103.24,GBP,103.24,True
+2025-04-07,21:34:28,Monzo,Monzo-to-Monzo,Jiwon Lee,Entertainment,-7.0,GBP,-7.0,False
+2025-04-11,14:54:06,Monzo,Faster payment,KORKMAZ Z,Income,28.0,GBP,28.0,True
+2025-04-11,14:45:45,Monzo,Card payment,TodayTix,Entertainment,-56.0,GBP,-56.0,False
+2025-04-12,02:10:03,Monzo,Card payment,Apple,Entertainment,-8.99,GBP,-8.99,False
+2025-04-12,14:53:04,Monzo,Faster payment,Suvandna Kalra,General,-4.0,GBP,-4.0,False
+2025-04-12,21:34:50,Monzo,Card payment,ASOS,Shopping,-43.49,GBP,-43.49,False
+2025-04-12,21:45:09,Monzo,Card payment,Holland & Barrett,General,-49.97,GBP,-49.97,False
+2025-04-14,04:56:09,Monzo,Faster payment,JIYOON MOON,Transfers,158.76,GBP,158.76,True
+2025-04-18,20:18:10,Monzo,Card payment,Therapie Clinic,General,-19.95,GBP,-19.95,False
+2025-04-18,12:25:33,Monzo,Card payment,The Farmers Mis,Eating out,-19.57,GBP,-19.57,False
+2025-04-18,21:49:13,Monzo,Card payment,Boots,Personal care,-27.41,GBP,-27.41,False
+2025-04-19,12:14:20,Monzo,Monzo-to-Monzo,Siofra Bracken,General,-6.85,GBP,-6.85,False
+2025-04-24,14:08:14,Monzo,Card payment,Holland & Barrett,General,-30.0,GBP,-30.0,False
+2025-04-30,15:33:51,Monzo,Card payment,Life4cuts Box LTD,General,-40.0,GBP,-40.0,False
+2025-05-04,20:06:04,Monzo,Card payment,giffgaff,Bills,-10.0,GBP,-10.0,False
+2025-05-07,05:04:02,Monzo,Faster payment,JIYOON MOON,Transfers,158.31,GBP,158.31,True
+2025-05-09,13:46:02,Monzo,Card payment,Lime,Transport,-4.49,GBP,-4.49,False
+2025-05-12,02:10:00,Monzo,Card payment,Apple,Entertainment,-8.99,GBP,-8.99,False
+2025-05-12,15:11:13,Monzo,Card payment,Resident Advisor,Entertainment,-5.0,GBP,-5.0,False
+2025-05-12,15:19:04,Monzo,Card payment,Genesis Cinema,Entertainment,-5.0,GBP,-5.0,False
+2025-05-13,10:55:34,Monzo,Card payment,Human Forest,Transport,0.6,GBP,0.6,True
+2025-05-13,10:53:40,Monzo,Card payment,Human Forest,Transport,0.0,GBP,0.0,False
+2025-05-13,10:53:49,Monzo,Card payment,Human Forest,Transport,-0.6,GBP,-0.6,False
+2025-05-15,09:47:03,Monzo,Card payment,Ual Lcf,Eating out,-3.45,GBP,-3.45,False
+2025-05-20,17:49:40,Monzo,Card payment,Wetherspoon,Eating out,-7.78,GBP,-7.78,False
+2025-05-21,08:25:57,Monzo,Monzo-to-Monzo,Siofra Bracken,General,-42.68,GBP,-42.68,False
+2025-05-21,10:46:01,Monzo,Faster payment,JIYOON MOON,Transfers,159.27,GBP,159.27,True
+2025-05-22,08:32:41,Monzo,Faster payment,Athina Kranta,General,-3.0,GBP,-3.0,False
+2025-05-24,20:54:46,Monzo,Card payment,Oseyo,Eating out,-23.0,GBP,-23.0,False
+2025-05-29,20:20:47,Monzo,Card payment,Apple,Entertainment,-9.99,GBP,-9.99,False
+2025-06-01,08:50:44,Monzo,Card payment,Tesco,Groceries,-3.6,GBP,-3.6,False
+2025-06-04,20:29:59,Monzo,Card payment,giffgaff,Bills,-10.0,GBP,-10.0,False
+2025-06-06,20:14:56,Monzo,Monzo-to-Monzo,Siofra Bracken,General,-40.0,GBP,-40.0,False
+2025-06-08,11:04:00,Monzo,Card payment,Sp Skincupid,Shopping,-60.0,GBP,-60.0,False
+2025-06-09,13:17:51,Monzo,Monzo-to-Monzo,Siofra Bracken,General,-74.95,GBP,-74.95,False
+2025-06-12,02:10:39,Monzo,Card payment,Apple,Entertainment,-8.99,GBP,-8.99,False
+2025-06-13,21:38:08,Monzo,Faster payment,JIYOON MOON,Transfers,266.0,GBP,266.0,True
+2025-06-14,12:26:28,Monzo,Card payment,Tesco,Groceries,-3.0,GBP,-3.0,False
+2025-06-17,14:39:37,Monzo,Monzo-to-Monzo,Siofra Bracken,General,-2.25,GBP,-2.25,False
+2025-06-22,18:45:11,Monzo,Monzo-to-Monzo,Urara Kodama,General,-21.0,GBP,-21.0,False
+2025-06-24,19:18:01,Monzo,Card payment,Wetherspoon,Eating out,-3.79,GBP,-3.79,False
+2025-06-28,18:31:14,Monzo,Card payment,Nest Bishopgate,Entertainment,-3.95,GBP,-3.95,False
+2025-07-04,20:25:16,Monzo,Card payment,giffgaff,Bills,-10.0,GBP,-10.0,False
+2025-07-05,09:40:42,Monzo,Card payment,Holland & Barrett,General,-96.32,GBP,-96.32,False
+2025-07-05,23:10:46,Monzo,Faster payment,Maxim Khovanskiy,Income,8.5,GBP,8.5,True
+2025-07-12,02:11:30,Monzo,Card payment,Apple,Entertainment,-8.99,GBP,-8.99,False
+2025-07-15,14:02:28,Monzo,Faster payment,Karl Johannes,General,-56.0,GBP,-56.0,False
+2025-07-20,13:49:02,Monzo,Card payment,Transport for London,Transport,-2.0,GBP,-2.0,False
+2025-07-24,08:54:29,Monzo,Card payment,Perplexity,Entertainment,-14.8,GBP,-14.8,False
+2025-07-24,20:26:44,Monzo,Faster payment,Karl Johannes,Income,1.0,GBP,1.0,True
+2025-07-24,20:31:48,Monzo,Faster payment,Karl Johannes,Income,164.47,GBP,164.47,True
+2025-07-25,08:17:40,Monzo,sepa,Karl Friedrich Johannes,Income,8.64,GBP,8.64,True
+2025-07-25,17:21:20,Monzo,Card payment,Moyses Stevens (Mayfai,Shopping,-25.0,GBP,-25.0,False
+2025-07-26,09:40:34,Monzo,Card payment,Tesco,Groceries,-3.6,GBP,-3.6,False
+2025-07-26,13:05:10,Monzo,Card payment,Transport for London,Transport,-5.8,GBP,-5.8,False
+2025-07-26,23:22:23,Monzo,Faster payment,Curtis Wilkinson,General,-45.0,GBP,-45.0,False
+2025-07-27,21:50:50,Monzo,Faster payment,JIYOON MOON,Transfers,585.75,GBP,585.75,True
+2025-07-27,12:38:49,Monzo,Card payment,Deepl,General,0.0,GBP,0.0,False
+2025-07-27,17:11:22,Monzo,Card payment,Tesco,Groceries,-1.3,GBP,-1.3,False
+2025-07-28,13:44:03,Monzo,Card payment,Tesco,Groceries,-1.2,GBP,-1.2,False
+2025-07-29,08:47:45,Monzo,Card payment,Ground,Shopping,-3.95,GBP,-3.95,False
+2025-07-29,15:03:41,Monzo,Card payment,Sainsbury’s,Groceries,-4.1,GBP,-4.1,False
+2025-07-29,15:52:01,Monzo,Faster payment,Maxim Khovanskiy,General,-526.0,GBP,-526.0,False
+2025-07-30,09:20:30,Monzo,Card payment,Tesco,Groceries,-3.6,GBP,-3.6,False
+2025-07-31,17:17:22,Monzo,Card payment,Brother Marcus,Eating out,0.0,GBP,0.0,False
+2025-08-02,09:58:52,Monzo,Card payment,Tesco,Groceries,-3.6,GBP,-3.6,False
+2025-08-03,14:09:11,Monzo,Card payment,Gecko Coffeehouse,Eating out,-5.63,GBP,-5.63,False
+2025-08-03,19:03:05,Monzo,Monzo-to-Monzo,Urara Kodama,General,-26.0,GBP,-26.0,False
+2025-08-03,22:29:55,Monzo,Monzo-to-Monzo,Siofra Bracken,General,-12.9,GBP,-12.9,False
+2025-08-04,20:29:52,Monzo,Card payment,giffgaff,Bills,-10.0,GBP,-10.0,False
+2025-08-10,07:58:25,Monzo,Card payment,Circuit Laundry,General,-4.2,GBP,-4.2,False
+2025-08-10,07:59:34,Monzo,Card payment,Circuit Laundry,General,-3.7,GBP,-3.7,False
+2025-08-10,08:51:10,Monzo,Card payment,Circuit Laundry,General,-2.2,GBP,-2.2,False
+2025-08-10,12:20:01,Monzo,Card payment,Sweet Cafe,Entertainment,-2.5,GBP,-2.5,False
+2025-08-10,18:27:53,Monzo,Card payment,Google,Entertainment,0.0,GBP,0.0,False
+2025-08-10,18:28:03,Monzo,Card payment,Studentdisc,Entertainment,-12.0,GBP,-12.0,False
+2025-08-11,09:45:35,Monzo,Card payment,Apple,Entertainment,-9.99,GBP,-9.99,False
+2025-08-11,11:03:21,Monzo,Card payment,Tesco,Groceries,-6.59,GBP,-6.59,False
+2025-08-12,02:10:15,Monzo,Card payment,Apple,Entertainment,-8.99,GBP,-8.99,False
+2025-08-16,15:59:50,Monzo,Card payment,ASOS,Shopping,-65.5,GBP,-65.5,False
+2025-08-22,16:37:18,Monzo,Card payment,Welcomepickups.com,Transport,-31.22,GBP,-31.22,False
+2025-08-24,09:50:31,Monzo,Card payment,Perplexity,Entertainment,16.43,GBP,16.43,True
+2025-08-24,17:31:32,Monzo,Card payment,Shein,Shopping,-7.72,GBP,-7.72,False
+2025-08-24,09:48:23,Monzo,Card payment,Perplexity,Entertainment,-16.43,GBP,-16.43,False
+2025-09-04,20:09:01,Monzo,Card payment,giffgaff,Bills,-10.0,GBP,-10.0,False
+2025-09-12,02:10:03,Monzo,Card payment,Apple,Entertainment,-8.99,GBP,-8.99,False
+2025-09-12,08:38:14,Monzo,Faster payment,JIYOON MOON,Transfers,24.3,GBP,24.3,True
+2025-09-19,19:35:50,Monzo,Faster payment,JIYOON MOON,Transfers,172.02,GBP,172.02,True
+2025-09-20,07:46:03,Monzo,Monzo-to-Monzo,Siofra Bracken,Holidays,-171.16,GBP,-171.16,False
+2025-09-20,08:13:05,Monzo,Card payment,giffgaff,Bills,-4.0,GBP,-4.0,False
+2025-09-30,15:38:31,Monzo,Faster payment,JIYOON MOON,Transfers,50.49,GBP,50.49,True
+2025-10-01,05:15:05,Monzo,Faster payment,Karl Johannes,Income,1.0,GBP,1.0,True
+2025-10-01,05:17:07,Monzo,Faster payment,Karl Johannes,Income,892.21,GBP,892.21,True
+2025-10-01,08:22:21,Monzo,Faster payment,MARSTON ROBING MAIN ACCOUNT BUSINESS CUR,General,-73.0,GBP,-73.0,False
+2025-10-02,03:38:46,Monzo,Faster payment,Karl Johannes,Income,15.0,GBP,15.0,True
+2025-10-03,06:10:31,Monzo,Faster payment,Maxim Khovanskiy,Income,29.9,GBP,29.9,True
+2025-10-03,13:47:59,Monzo,Monzo-to-Monzo,Siofra Bracken,General,-12.0,GBP,-12.0,False
+2025-10-05,10:11:00,Monzo,Faster payment,Maxim Khovanskiy,Income,254.04,GBP,254.04,True
+2025-10-08,05:04:37,Monzo,Faster payment,Maxim Khovanskiy,Income,48.07,GBP,48.07,True
+2025-10-12,00:40:24,Monzo,Card payment,Revolut,Transfers,-10.0,GBP,-10.0,False
+2025-10-12,02:10:14,Monzo,Card payment,Apple,Entertainment,-8.99,GBP,-8.99,False
+2025-10-15,07:18:52,Monzo,Faster payment,Karl Johannes,Income,21.57,GBP,21.57,True
+2025-10-16,07:07:17,Monzo,Card payment,Nomad,Eating out,-12.76,GBP,-12.76,False
+2025-10-29,10:37:18,Monzo,Faster payment,Karl Johannes,Income,164.23,GBP,164.23,True
+2025-11-12,03:10:21,Monzo,Card payment,Apple,Entertainment,-8.99,GBP,-8.99,False
+2025-11-15,13:42:09,Monzo,Card payment,Nomad,Eating out,-3.04,GBP,-3.04,False
+2025-11-20,06:55:14,Monzo,Card payment,Nomad,Eating out,-1.9,GBP,-1.9,False
+2025-11-23,08:13:20,Monzo,Faster payment,MAXIM KHOVANSKY,Income,11.09,GBP,11.09,True
+2025-11-28,01:23:16,Monzo,Monzo-to-Monzo,Siofra Bracken,General,-26.47,GBP,-26.47,False
+2025-12-04,08:35:00,Monzo,Card payment,giffgaff,Bills,-10.0,GBP,-10.0,False
+2025-12-05,19:04:55,Monzo,Card payment,Uber,Transport,-1.24,GBP,-1.24,False
+2025-12-05,17:18:03,Monzo,Card payment,Uber,Transport,-57.91,GBP,-57.91,False
+2025-12-06,11:07:57,Monzo,Card payment,Transport for London,Transport,-3.5,GBP,-3.5,False
+2025-12-06,13:08:28,Monzo,Card payment,Kova LTD,Groceries,-4.6,GBP,-4.6,False
+2025-12-06,14:46:51,Monzo,Card payment,Duck and Rice,Eating out,-24.22,GBP,-24.22,False
+2025-12-06,17:30:40,Monzo,Card payment,Sainsbury’s,Groceries,-18.93,GBP,-18.93,False
+2025-12-07,15:12:38,Monzo,Card payment,Boots,Personal care,-17.15,GBP,-17.15,False
+2025-12-07,16:54:25,Monzo,Card payment,Sainsbury’s,Groceries,-4.1,GBP,-4.1,False
+2025-12-08,12:28:22,Monzo,Card payment,Oseyo,Eating out,-23.39,GBP,-23.39,False
+2025-12-08,10:27:57,Monzo,Card payment,Transport for London,Transport,-3.5,GBP,-3.5,False
+2025-12-08,09:19:54,Monzo,Card payment,District Nine Elms,Eating out,-6.5,GBP,-6.5,False
+2025-12-09,12:31:28,Monzo,Cash deposit,Post Office,Income,9.0,GBP,9.0,True
+2025-12-09,13:44:55,Monzo,Card payment,McDonald’s,Eating out,-1.49,GBP,-1.49,False
+2025-12-09,15:19:07,Monzo,Card payment,Transport for London,Transport,-3.5,GBP,-3.5,False
+2025-12-10,08:33:17,Monzo,Card payment,Starbucks,Eating out,-4.0,GBP,-4.0,False
+2025-12-10,12:44:45,Monzo,Card payment,Starbucks,Eating out,-3.45,GBP,-3.45,False
+2025-12-11,19:27:03,Monzo,Card payment,Jetts Brixton,Entertainment,-49.95,GBP,-49.95,False
+2025-12-11,16:52:14,Monzo,Card payment,Tesco,Groceries,-3.6,GBP,-3.6,False
+2025-12-11,10:35:07,Monzo,Card payment,YouTube Premium,Entertainment,-7.99,GBP,-7.99,False
+2025-12-11,10:34:25,Monzo,Card payment,Google,Entertainment,0.0,GBP,0.0,False
+2025-12-11,10:33:12,Monzo,Card payment,Google,Entertainment,0.0,GBP,0.0,False
+2025-12-11,07:51:59,Monzo,Card payment,Stir Coffee Li,Eating out,-5.5,GBP,-5.5,False
+2025-12-12,03:10:40,Monzo,Card payment,Apple,Entertainment,-8.99,GBP,-8.99,False
+2025-12-12,15:01:17,Monzo,Card payment,Muji,Shopping,-11.9,GBP,-11.9,False
+2025-12-12,15:08:18,Monzo,Card payment,Waterstones,Entertainment,-4.0,GBP,-4.0,False
+2025-12-13,12:52:25,Monzo,Card payment,Transport for London,Transport,-3.5,GBP,-3.5,False
+2025-12-13,15:45:30,Monzo,Card payment,Sainsbury’s,Groceries,-5.33,GBP,-5.33,False
