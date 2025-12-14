@@ -1,0 +1,20 @@
+{
+  "files": [
+    {
+      "filename": "Monzo Data Export - CSV (Sunday, 14 December 2025).csv",
+      "bank": "Monzo",
+      "transactions": 287,
+      "currency": "GBP",
+      "uploaded_at": "2025-12-14T09:00:00",
+      "source": "initial"
+    },
+    {
+      "filename": "TravelWallet Data Export.xlsx",
+      "bank": "TravelWallet (Korea)",
+      "transactions": 1054,
+      "currency": "KRW",
+      "uploaded_at": "2025-12-14T10:53:24.189289",
+      "source": "upload"
+    }
+  ]
+}

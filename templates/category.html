@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+
+{% block title %}{{ category_name }} - Finance App{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <a href="/" class="back-link">← Back to Dashboard</a>
+    <h1>{{ category_name }}</h1>
+    <p class="subtitle" id="category-summary">Loading...</p>
+</div>
+
+<!-- Period Tabs -->
+<div class="period-tabs">
+    <button class="tab-btn active" data-period="daily">Daily</button>
+    <button class="tab-btn" data-period="monthly">Monthly</button>
+    <button class="tab-btn" data-period="quarterly">Quarterly</button>
+    <button class="tab-btn" data-period="yearly">Yearly</button>
+</div>
+
+<!-- Chart -->
+<div class="chart-container full-width">
+    <canvas id="categoryDetailChart"></canvas>
+</div>
+
+<!-- Transactions Table -->
+<div class="table-container">
+    <h3>Transactions</h3>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Merchant</th>
+                <th>Type</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody id="transactions-body">
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const categoryName = "{{ category_name }}";
+    let currentChart = null;
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Tab click handlers
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                loadCategoryData(this.dataset.period);
+            });
+        });
+
+        // Load initial data
+        loadCategoryData('daily');
+    });
+
+    async function loadCategoryData(period) {
+        const data = await fetch(`/api/category/${encodeURIComponent(categoryName)}/${period}`).then(r => r.json());
+
+        if (data.error) {
+            console.error(data.error);
+            return;
+        }
+
+        // Update summary
+        document.getElementById('category-summary').textContent =
+            `Total: ${formatCurrency(data.total)} • ${data.count} transactions`;
+
+        // Update chart
+        createDetailChart(data.chart_data, period);
+
+        // Update table
+        createTransactionsTable(data.transactions);
+    }
+
+    function createDetailChart(chartData, period) {
+        const ctx = document.getElementById('categoryDetailChart').getContext('2d');
+
+        // Destroy existing chart
+        if (currentChart) {
+            currentChart.destroy();
+        }
+
+        // Color based on period
+        const colors = {
+            daily: '#3498db',
+            monthly: '#2ecc71',
+            quarterly: '#f1c40f',
+            yearly: '#9b59b6'
+        };
+
+        currentChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: chartData.map(d => d.period),
+                datasets: [{
+                    label: 'Spending (£)',
+                    data: chartData.map(d => d.amount),
+                    backgroundColor: colors[period] + 'cc',
+                    borderColor: colors[period],
+                    borderWidth: 1,
+                    borderRadius: 4,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    x: {
+                        ticks: { color: '#95a5a6', maxRotation: 45 },
+                        grid: { display: false }
+                    },
+                    y: {
+                        ticks: {
+                            color: '#95a5a6',
+                            callback: v => '£' + v.toLocaleString()
+                        },
+                        grid: { color: 'rgba(255,255,255,0.1)' }
+                    }
+                }
+            }
+        });
+    }
+
+    function createTransactionsTable(transactions) {
+        const tbody = document.getElementById('transactions-body');
+        tbody.innerHTML = transactions.slice(0, 50).map(t => `
+        <tr>
+            <td>${t.date}</td>
+            <td>${t.merchant}</td>
+            <td>${t.type}</td>
+            <td class="${t.amount_gbp >= 0 ? 'positive' : 'negative'}">
+                ${formatCurrency(Math.abs(t.amount_gbp))}
+            </td>
+        </tr>
+    `).join('');
+    }
+</script>
+{% endblock %}

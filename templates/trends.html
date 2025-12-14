@@ -1,0 +1,205 @@
+{% extends "base.html" %}
+
+{% block title %}Trends - Finance App{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Spending Trends</h1>
+    <p class="subtitle">Analyze your spending patterns over time</p>
+</div>
+
+<!-- Quarterly Summary -->
+<div class="chart-container full-width">
+    <h3>Quarterly Overview</h3>
+    <canvas id="quarterlyChart"></canvas>
+</div>
+
+<!-- Category Trends -->
+<div class="chart-container full-width">
+    <h3>Top Categories Over Time</h3>
+    <canvas id="trendsChart"></canvas>
+</div>
+
+<!-- Yearly Comparison -->
+<div class="charts-row">
+    <div class="chart-container">
+        <h3>Yearly Comparison</h3>
+        <canvas id="yearlyChart"></canvas>
+    </div>
+    <div class="chart-container">
+        <h3>Spending Breakdown</h3>
+        <div id="yearly-stats" class="stats-grid"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        loadTrends();
+    });
+
+    async function loadTrends() {
+        // Load quarterly data
+        const quarterly = await fetch('/api/quarterly').then(r => r.json());
+        createQuarterlyChart(quarterly);
+
+        // Load trends data
+        const trends = await fetch('/api/trends').then(r => r.json());
+        createTrendsChart(trends);
+
+        // Load yearly data
+        const yearly = await fetch('/api/yearly').then(r => r.json());
+        createYearlyChart(yearly);
+        createYearlyStats(yearly);
+    }
+
+    function createQuarterlyChart(data) {
+        const ctx = document.getElementById('quarterlyChart').getContext('2d');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: data.map(d => d.quarter),
+                datasets: [
+                    {
+                        label: 'Spending',
+                        data: data.map(d => d.spending),
+                        backgroundColor: '#e74c3ccc',
+                        borderColor: '#e74c3c',
+                        borderWidth: 1,
+                        borderRadius: 4,
+                    },
+                    {
+                        label: 'Income',
+                        data: data.map(d => d.income),
+                        backgroundColor: '#2ecc71cc',
+                        borderColor: '#2ecc71',
+                        borderWidth: 1,
+                        borderRadius: 4,
+                    },
+                    {
+                        label: 'Net',
+                        data: data.map(d => d.net),
+                        backgroundColor: '#3498dbcc',
+                        borderColor: '#3498db',
+                        borderWidth: 1,
+                        borderRadius: 4,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: { color: '#ecf0f1' }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: { color: '#95a5a6' },
+                        grid: { display: false }
+                    },
+                    y: {
+                        ticks: {
+                            color: '#95a5a6',
+                            callback: v => '£' + v.toLocaleString()
+                        },
+                        grid: { color: 'rgba(255,255,255,0.1)' }
+                    }
+                }
+            }
+        });
+    }
+
+    function createTrendsChart(data) {
+        const ctx = document.getElementById('trendsChart').getContext('2d');
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: data.labels,
+                datasets: data.datasets.map(ds => ({
+                    ...ds,
+                    tension: 0.3,
+                    pointRadius: 4,
+                    pointHoverRadius: 6,
+                }))
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: { color: '#ecf0f1' }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: { color: '#95a5a6' },
+                        grid: { display: false }
+                    },
+                    y: {
+                        ticks: {
+                            color: '#95a5a6',
+                            callback: v => '£' + v.toLocaleString()
+                        },
+                        grid: { color: 'rgba(255,255,255,0.1)' }
+                    }
+                }
+            }
+        });
+    }
+
+    function createYearlyChart(data) {
+        const ctx = document.getElementById('yearlyChart').getContext('2d');
+
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: data.map(d => d.year),
+                datasets: [{
+                    label: 'Spending',
+                    data: data.map(d => d.spending),
+                    backgroundColor: ['#3498db', '#e74c3c', '#2ecc71', '#f1c40f'],
+                    borderWidth: 0,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { color: '#ecf0f1' }
+                    }
+                }
+            }
+        });
+    }
+
+    function createYearlyStats(data) {
+        const container = document.getElementById('yearly-stats');
+        container.innerHTML = data.map(y => `
+        <div class="stat-card">
+            <h4>${y.year}</h4>
+            <div class="stat-row">
+                <span>Income:</span>
+                <span class="positive">${formatCurrency(y.income)}</span>
+            </div>
+            <div class="stat-row">
+                <span>Spending:</span>
+                <span class="negative">${formatCurrency(y.spending)}</span>
+            </div>
+            <div class="stat-row net">
+                <span>Net:</span>
+                <span class="${y.net >= 0 ? 'positive' : 'negative'}">${formatCurrency(y.net)}</span>
+            </div>
+        </div>
+    `).join('');
+    }
+</script>
+{% endblock %}

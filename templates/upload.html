@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+
+{% block title %}Upload - Finance App{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Upload Data</h1>
+    <p class="subtitle">Upload CSV or Excel files to add transactions</p>
+</div>
+
+<!-- Loaded Files Section -->
+<div class="loaded-files-section">
+    <h3>📊 Loaded Data Sources</h3>
+    <div class="loaded-summary">
+        <div class="summary-stat">
+            <span class="stat-number" id="total-files">0</span>
+            <span class="stat-label">Files</span>
+        </div>
+        <div class="summary-stat">
+            <span class="stat-number" id="total-transactions">0</span>
+            <span class="stat-label">Transactions</span>
+        </div>
+    </div>
+    <div class="loaded-files-list" id="loaded-files-list">
+        <p class="loading-text">Loading...</p>
+    </div>
+</div>
+
+<div class="upload-container">
+    <div class="upload-zone" id="upload-zone">
+        <div class="upload-icon">📁</div>
+        <h3>Drag & Drop your file here</h3>
+        <p>or click to browse</p>
+        <p class="upload-hint">Supports CSV and Excel (.xlsx) files</p>
+        <input type="file" id="file-input" accept=".csv,.xlsx,.xls" hidden>
+    </div>
+
+    <div class="upload-status" id="upload-status" style="display: none;">
+        <div class="status-icon" id="status-icon">⏳</div>
+        <div class="status-message" id="status-message">Processing...</div>
+    </div>
+</div>
+
+<div class="supported-formats">
+    <h3>Supported Formats</h3>
+    <div class="format-cards">
+        <div class="format-card">
+            <h4>🏦 Monzo Bank</h4>
+            <p>Export from Monzo app as CSV</p>
+            <p class="format-cols">Columns: Date, Amount, Category, Name</p>
+        </div>
+        <div class="format-card">
+            <h4>🇰🇷 Korean Bank (TravelWallet)</h4>
+            <p>Excel export with Korean columns</p>
+            <p class="format-cols">Columns: 가맹점 이름, 종류, Amount (KRW)</p>
+        </div>
+        <div class="format-card">
+            <h4>📄 Generic CSV</h4>
+            <p>Any CSV with standard columns</p>
+            <p class="format-cols">Expected: date, amount, category (optional)</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const uploadZone = document.getElementById('upload-zone');
+    const fileInput = document.getElementById('file-input');
+    const statusDiv = document.getElementById('upload-status');
+    const statusIcon = document.getElementById('status-icon');
+    const statusMessage = document.getElementById('status-message');
+
+    // Load file history on page load
+    document.addEventListener('DOMContentLoaded', loadFileHistory);
+
+    async function loadFileHistory() {
+        try {
+            const response = await fetch('/api/upload-history');
+            const data = await response.json();
+
+            document.getElementById('total-files').textContent = data.total_files;
+            document.getElementById('total-transactions').textContent = data.total_transactions.toLocaleString();
+
+            const listContainer = document.getElementById('loaded-files-list');
+
+            if (data.files.length === 0) {
+                listContainer.innerHTML = '<p class="no-files">No files loaded yet. Upload your first file above!</p>';
+                return;
+            }
+
+            listContainer.innerHTML = data.files.map(file => `
+            <div class="file-item">
+                <div class="file-icon">${getBankIcon(file.bank)}</div>
+                <div class="file-info">
+                    <span class="file-name">${file.filename}</span>
+                    <span class="file-meta">${file.bank} • ${file.currency}</span>
+                </div>
+                <div class="file-stats">
+                    <span class="file-count">${file.transactions.toLocaleString()} txns</span>
+                    <span class="file-date">${formatDate(file.uploaded_at)}</span>
+                </div>
+            </div>
+        `).join('');
+        } catch (error) {
+            console.error('Failed to load file history:', error);
+            document.getElementById('loaded-files-list').innerHTML =
+                '<p class="error-text">Failed to load file history</p>';
+        }
+    }
+
+    function getBankIcon(bank) {
+        if (bank.includes('Monzo')) return '🏦';
+        if (bank.includes('Korea') || bank.includes('Travel')) return '🇰🇷';
+        return '📄';
+    }
+
+    function formatDate(isoDate) {
+        if (!isoDate) return '';
+        const date = new Date(isoDate);
+        return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+    }
+
+    // Click to upload
+    uploadZone.addEventListener('click', () => fileInput.click());
+
+    // Drag and drop
+    uploadZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        uploadZone.classList.add('dragover');
+    });
+
+    uploadZone.addEventListener('dragleave', () => {
+        uploadZone.classList.remove('dragover');
+    });
+
+    uploadZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        uploadZone.classList.remove('dragover');
+        const files = e.dataTransfer.files;
+        if (files.length > 0) {
+            uploadFile(files[0]);
+        }
+    });
+
+    // File input change
+    fileInput.addEventListener('change', () => {
+        if (fileInput.files.length > 0) {
+            uploadFile(fileInput.files[0]);
+        }
+    });
+
+    async function uploadFile(file) {
+        // Show status
+        uploadZone.style.display = 'none';
+        statusDiv.style.display = 'block';
+        statusIcon.textContent = '⏳';
+        statusMessage.textContent = `Processing ${file.name}...`;
+
+        const formData = new FormData();
+        formData.append('file', file);
+
+        try {
+            const response = await fetch('/api/upload', {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                statusIcon.textContent = '✅';
+                statusMessage.innerHTML = `
+                <strong>Success!</strong><br>
+                ${result.message}<br>
+                Total transactions: ${result.total}<br>
+                <a href="/" class="btn-link">Go to Dashboard →</a>
+            `;
+                // Refresh the file list
+                loadFileHistory();
+            } else {
+                throw new Error(result.error || 'Upload failed');
+            }
+        } catch (error) {
+            statusIcon.textContent = '❌';
+            statusMessage.innerHTML = `
+            <strong>Error</strong><br>
+            ${error.message}<br>
+            <button onclick="resetUpload()" class="btn-retry">Try Again</button>
+        `;
+        }
+    }
+
+    function resetUpload() {
+        uploadZone.style.display = 'flex';
+        statusDiv.style.display = 'none';
+        fileInput.value = '';
+    }
+</script>
+{% endblock %}

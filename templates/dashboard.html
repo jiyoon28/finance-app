@@ -1,0 +1,214 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Finance App{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Dashboard</h1>
+    <p class="subtitle" id="date-range">Loading...</p>
+</div>
+
+<!-- Metric Cards -->
+<div class="metric-cards">
+    <div class="metric-card income">
+        <div class="metric-icon">💵</div>
+        <div class="metric-content">
+            <span class="metric-label">Total Income</span>
+            <span class="metric-value" id="total-income">£0.00</span>
+        </div>
+    </div>
+    <div class="metric-card spending">
+        <div class="metric-icon">💳</div>
+        <div class="metric-content">
+            <span class="metric-label">Total Spending</span>
+            <span class="metric-value" id="total-spending">£0.00</span>
+        </div>
+    </div>
+    <div class="metric-card net">
+        <div class="metric-icon">📊</div>
+        <div class="metric-content">
+            <span class="metric-label">Net Cash Flow</span>
+            <span class="metric-value" id="net-cashflow">£0.00</span>
+        </div>
+    </div>
+    <div class="metric-card transactions">
+        <div class="metric-icon">🧾</div>
+        <div class="metric-content">
+            <span class="metric-label">Transactions</span>
+            <span class="metric-value" id="transaction-count">0</span>
+        </div>
+    </div>
+</div>
+
+<!-- Charts Row -->
+<div class="charts-row">
+    <div class="chart-container large">
+        <h3>Monthly Spending vs Income</h3>
+        <canvas id="monthlyChart"></canvas>
+    </div>
+    <div class="chart-container">
+        <h3>Spending by Category</h3>
+        <canvas id="categoryChart"></canvas>
+    </div>
+</div>
+
+<!-- Bottom Row -->
+<div class="charts-row">
+    <div class="chart-container">
+        <h3>Top Categories</h3>
+        <div id="category-list" class="category-list"></div>
+    </div>
+    <div class="chart-container">
+        <h3>Top Merchants</h3>
+        <div id="merchant-list" class="merchant-list"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        loadDashboard();
+    });
+
+    async function loadDashboard() {
+        // Load summary
+        const summary = await fetch('/api/summary').then(r => r.json());
+
+        if (!summary.error) {
+            document.getElementById('total-income').textContent = formatCurrency(summary.total_income);
+            document.getElementById('total-spending').textContent = formatCurrency(summary.total_spending);
+            document.getElementById('net-cashflow').textContent = formatCurrency(summary.net_cash_flow);
+            document.getElementById('transaction-count').textContent = summary.transaction_count;
+            document.getElementById('date-range').textContent = `${summary.date_from} to ${summary.date_to}`;
+
+            // Color net cashflow
+            const netEl = document.getElementById('net-cashflow');
+            netEl.classList.add(summary.net_cash_flow >= 0 ? 'positive' : 'negative');
+        }
+
+        // Load monthly chart
+        const monthly = await fetch('/api/monthly').then(r => r.json());
+        createMonthlyChart(monthly);
+
+        // Load category chart
+        const categories = await fetch('/api/categories').then(r => r.json());
+        createCategoryChart(categories);
+        createCategoryList(categories);
+
+        // Load merchants
+        const merchants = await fetch('/api/merchants').then(r => r.json());
+        createMerchantList(merchants);
+    }
+
+    function createMonthlyChart(data) {
+        const ctx = document.getElementById('monthlyChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: data.map(d => d.month),
+                datasets: [
+                    {
+                        label: 'Spending',
+                        data: data.map(d => d.spending),
+                        borderColor: '#e74c3c',
+                        backgroundColor: 'rgba(231, 76, 60, 0.1)',
+                        fill: true,
+                        tension: 0.3,
+                    },
+                    {
+                        label: 'Income',
+                        data: data.map(d => d.income),
+                        borderColor: '#2ecc71',
+                        backgroundColor: 'rgba(46, 204, 113, 0.1)',
+                        fill: true,
+                        tension: 0.3,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: { color: '#ecf0f1' }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: { color: '#95a5a6' },
+                        grid: { color: 'rgba(255,255,255,0.1)' }
+                    },
+                    y: {
+                        ticks: {
+                            color: '#95a5a6',
+                            callback: v => '£' + v.toLocaleString()
+                        },
+                        grid: { color: 'rgba(255,255,255,0.1)' }
+                    }
+                }
+            }
+        });
+    }
+
+    function createCategoryChart(data) {
+        const ctx = document.getElementById('categoryChart').getContext('2d');
+        const colors = ['#3498db', '#e74c3c', '#2ecc71', '#f1c40f', '#9b59b6', '#1abc9c', '#e67e22', '#34495e', '#16a085', '#c0392b'];
+
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: data.slice(0, 8).map(d => d.category),
+                datasets: [{
+                    data: data.slice(0, 8).map(d => d.total),
+                    backgroundColor: colors,
+                    borderWidth: 0,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: {
+                            color: '#ecf0f1',
+                            padding: 15,
+                            usePointStyle: true,
+                        }
+                    }
+                },
+                onClick: (e, elements) => {
+                    if (elements.length > 0) {
+                        const category = data[elements[0].index].category;
+                        window.location.href = '/category/' + encodeURIComponent(category);
+                    }
+                }
+            }
+        });
+    }
+
+    function createCategoryList(data) {
+        const container = document.getElementById('category-list');
+        container.innerHTML = data.slice(0, 8).map(cat => `
+        <a href="/category/${encodeURIComponent(cat.category)}" class="list-item">
+            <span class="item-name">${cat.category}</span>
+            <span class="item-value">${formatCurrency(cat.total)}</span>
+            <span class="item-percent">${cat.percentage}%</span>
+        </a>
+    `).join('');
+    }
+
+    function createMerchantList(data) {
+        const container = document.getElementById('merchant-list');
+        container.innerHTML = data.map(m => `
+        <div class="list-item">
+            <span class="item-name">${m.merchant}</span>
+            <span class="item-value">${formatCurrency(m.total)}</span>
+            <span class="item-count">${m.count} txns</span>
+        </div>
+    `).join('');
+    }
+</script>
+{% endblock %}
